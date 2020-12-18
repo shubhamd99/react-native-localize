@@ -23,8 +23,12 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { useTranslation } from './context/LanguageContext';
 
 const App: () => React$Node = () => {
+
+  const { hello } = useTranslation();
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -40,7 +44,7 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionTitle}>{hello}</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
